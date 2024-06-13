@@ -1,0 +1,25 @@
+{
+	"oauthScopes": [
+		"https://www.googleapis.com/auth/gmail.addons.execute",
+		"https://www.googleapis.com/auth/gmail.readonly",
+		"https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+		"https://www.googleapis.com/auth/gmail.addons.current.message.action",
+		"https://www.googleapis.com/auth/gmail.modify",
+		"https://mail.google.com/"
+	],
+	"gmail": {
+		"name": "Email Information",
+		"logoUrl": "",
+		"contextualTriggers": [
+			{
+				"unconditional": {},
+				"onTriggerFunction": "buildAddOn"
+			}
+		],
+		"openLinkUrlPrefixes": [
+			"https://mail.google.com/"
+		],
+		"primaryColor": "#FFFFFF",
+		"secondaryColor": "#000000"
+	}
+}
