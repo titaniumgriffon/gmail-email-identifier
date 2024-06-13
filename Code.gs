@@ -347,7 +347,7 @@ function sectionVerdict(message) {
 		verdict = VERDICTS.whitelistedDomain;
 	}
 	else { //This is an external message.
-		verdict = VERDICTS.default;
+		verdict = VERDICTS.fallback;
 	}
 
 	// Create a section and add the key-value pairs to it

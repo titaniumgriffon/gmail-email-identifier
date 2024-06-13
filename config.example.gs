@@ -67,7 +67,7 @@ var VERDICTS = {
 		header: '<font color="' + COLOR.green + '"><b>Likely Safe - Whitelisted Domain</b></font>',
 		text: 'This message was sent from a whitelisted domain, but not from an employee from your organization. It is likely safe, but please report to your organization as needed.',
 	},
-	default: { //This is an external message.
+	fallback: { //This is an external message.
 		header: '<font color="' + COLOR.red + '"><b>External - Proceed with Caution</b></font>',
 		text: 'This message was not sent from an employee from your organization. This could be a legitimate phishing attempt or scam, proceed with caution and report to your organization as needed.',
 	},
