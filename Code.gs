@@ -367,7 +367,7 @@ function extractDomainsFromGmailMessage(messageBody) {
 	var domains = [];
 
 	// Regular expression pattern to match href values
-	var pattern = /.*:\/\/([^"\/?]*).*/gi;
+	var pattern = /(?=:\/\/*):\/\/([^"\/?<\s]*)/gi;
 
 	// Match all href values using the pattern
 	var match;
