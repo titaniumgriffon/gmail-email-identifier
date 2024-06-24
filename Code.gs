@@ -42,21 +42,17 @@ function buildAddOn(e) {
  * @return {CardSection}
  */
 function sectionLinksFound(message) {
-	// Assuming extractHrefFromGmailMessage is defined elsewhere
-	var hrefList = extractHrefFromGmailMessage(message.getBody());
-
-	// Remove duplicates from hrefList
-	hrefList = removeDuplicates(hrefList);
+	var domainList = extractDomainsFromGmailMessage(message.getBody());
 
 	// Create a section and add the key-value pairs to it
 	var section = CardService.newCardSection().setHeader('Domains Found');
 
-	if (hrefList.length === 0) {
+	if (domainList.length === 0) {
 		section.addWidget(CardService.newTextParagraph().setText('No links found in the message.'));
 	} else {
-		for (var i = 0; i < hrefList.length; ++i) {
-			if (hrefList[i] !== undefined) {
-				section.addWidget(CardService.newKeyValue().setContent(hrefList[i]));
+		for (var i = 0; i < domainList.length; ++i) {
+			if (domainList[i] !== undefined) {
+				section.addWidget(CardService.newKeyValue().setContent(domainList[i]));
 			}
 		}
 	}
@@ -367,19 +363,19 @@ function sectionVerdict(message) {
  * @param {string} messageBody
  * @return {array}
  */
-function extractHrefFromGmailMessage(messageBody) {
-	var hrefValues = [];
+function extractDomainsFromGmailMessage(messageBody) {
+	var domains = [];
 
 	// Regular expression pattern to match href values
-	var hrefPattern = /href=".*:\/\/([^"\/?]*).*"/g;
+	var pattern = /.*:\/\/([^"\/?]*).*/gi;
 
 	// Match all href values using the pattern
 	var match;
-	while ((match = hrefPattern.exec(messageBody)) !== null) {
-		hrefValues.push(match[1].toLowerCase()); // Add matched href value to the array
+	while ((match = pattern.exec(messageBody)) !== null) {
+		domains.push(match[1].toLowerCase()); // Add matched href value to the array
 	}
 
-	return hrefValues;
+	return removeDuplicates(domains).sort();
 }
 
 /**
