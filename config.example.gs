@@ -1,8 +1,8 @@
 var ORG_DOMAIN = 'example.com';
 var ORG_IP_ADDRESS = '127.0.0.1'; //External IP of the mail relay.
 var CYBERSECURITY_EMAIL = 'potential.phishing@example.com'; //Cybersecurity email that forwarded emails get sent to.
-var PHISHING_COC_HEADER = 'X-PHISH'; //Header key.
-var PHISHING_COC_VALUE = 'example.com-phish'; //Value to look for in header.
+var PHISHING_HEADER = 'X-PHISH'; //Header key.
+var PHISHING_VALUE = 'example.com-phish'; //Value to look for in header.
 var WHITELISTED_SAFE_DOMAINS = [
 	'event.eventbrite.com',
 	'google.com',
@@ -22,7 +22,7 @@ var COLOR = {
 	black: '#000000',
 	green: '#008000',
 	red: '#FF0000',
-	yellow: 'FFFF00',
+	yellow: '#FFFF00',
 	white: '#FFFFFF',
 	org_color: '#000000'
 };
