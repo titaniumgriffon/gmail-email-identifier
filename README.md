@@ -89,3 +89,19 @@ Now that we have the script in place, we have to set up the connection so it wil
 You will need to wait several minutes for the app to appear in your Gmail Add-ons. 
 
 
+
+
+
+
+
+
+
+### To Do
+
+* Add Splunk Setup instructions
+  * Setup HEC Connector
+  * Get the URL and Key
+  * Copy them into your Config File
+  * Splunk Alerts?
+* Attachments sent to Logging Server
+* Restructure App to include the results in the log.
