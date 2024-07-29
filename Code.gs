@@ -97,11 +97,37 @@ function forwardEmailCybersecurity(e) {
 		});
 	}
 
+	if (HEC_LOG === true) {
+		var attachmentCount = attachmentsArray.length;
+		if (internalPhishingFlag === true)
+			--attachmentCount;
+		
+		var response = UrlFetchApp.fetch(HEC_ENDPOINT, {
+			"method": "post",
+			"contentType": "application/json",
+			"headers": {
+				"Authorization": "Splunk " + HEC_TOKEN,
+				"content-type": "application/json"
+			},
+			"payload": JSON.stringify(
+				{
+					"event": {
+						"subject": message.getSubject(),
+						"to": message.getTo(),
+						"cc_list": message.getCc(),
+						"from": message.getFrom(),
+						"date": message.getDate(),
+						"attachment_count": attachmentsArray.length,
+						"internal_phishing_flag": internalPhishingFlag,
+						"raw_content": message.getRawContent(),
+					}
+				}
+			)
+		});
+	}
+
 	//Moving message to trash.
 	message.moveToTrash();
-
-	// Log forwarded message ID
-	// Logger.log("Forwarded message ID: " + forwardedMessage.getId());
 }
 
 

@@ -72,3 +72,8 @@ var VERDICTS = {
 		text: 'This message was not sent from an employee from your organization. This could be a legitimate phishing attempt or scam, proceed with caution and report to your organization as needed.',
 	},
 };
+
+//Logging (Splunk)
+var HEC_LOG = false;
+var HEC_ENDPOINT = "https://example.com/path/";
+var HEC_TOKEN = "";

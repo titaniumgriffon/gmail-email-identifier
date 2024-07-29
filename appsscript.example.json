@@ -5,7 +5,8 @@
 		"https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
 		"https://www.googleapis.com/auth/gmail.addons.current.message.action",
 		"https://www.googleapis.com/auth/gmail.modify",
-		"https://mail.google.com/"
+		"https://mail.google.com/",
+		"https://www.googleapis.com/auth/script.external_request"
 	],
 	"gmail": {
 		"name": "Email Information",
