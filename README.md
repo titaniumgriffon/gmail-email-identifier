@@ -55,15 +55,27 @@ Now that we have the script in place, we have to set up the connection so it wil
 14.  Go back to APIs and Services
 15.  Click the "Google Workspace Marketplace SDK"
 16.  Select "App Configuration" 
-    1.  For App Visibality, select Private
-    2.  Installation Settings, Individual + Admin Install
-    3.  App Integration
-        1.  select Google Workspace Add-On
-        2.  Deploy usering Apps Script deployment id
-        3.  Paste your Deployment ID from earlier
-        4.  Fill out your information for the Developer
-        5.  Hit SAVE![alt text](assets/console_app_configuration.png)
-17. Click on "Store Listing"
+       1.  For App Visibality, select Private
+       2.  Installation Settings, Individual + Admin Install
+       3.  App Integration
+         1. select Google Workspace Add-On
+         2. Deploy usering Apps Script deployment id
+         3. Paste your Deployment ID from earlier
+         4. Fill out your information for the Developer
+         5. Hit SAVE![alt text](assets/console_app_configuration.png)
+       4. OAuth Scopes
+          - Fill out the following for the OAUTH Scopes
+              * https://www.googleapis.com/auth/userinfo.email
+              * https://www.googleapis.com/auth/userinfo.profile
+              * https://www.googleapis.com/auth/script.external_request
+              * https://mail.google.com/
+              * https://www.googleapis.com/auth/gmail.modify
+              * https://www.googleapis.com/auth/gmail.addons.current.message.action
+              * https://www.googleapis.com/auth/gmail.addons.current.message.readonly
+              * https://www.googleapis.com/auth/gmail.readonly
+              * https://www.googleapis.com/auth/gmail.addons.execute
+![alt text](assets/console_appconfig_oauth.png)
+1.  Click on "Store Listing"
     1.  Under Edit Language, Fill in the Application Name and Descriptions![alt text](assets/console_store_listing_language.png)
     2.  Select a Category
     3.  Upload an Application Icon
@@ -71,7 +83,6 @@ Now that we have the script in place, we have to set up the connection so it wil
     5.  Fill in the ToS, Privacy Policy, and Support URL.
     6.  Select the Region
     7.  Click Publish![alt text](assets/console_store_listing.png)
-18. 
 
 ### Google Admin Center ***
 
