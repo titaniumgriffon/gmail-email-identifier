@@ -22,7 +22,7 @@ var COLOR = {
 	black: '#000000',
 	green: '#008000',
 	red: '#FF0000',
-	yellow: '#FFFF00',
+	yellow: '#FFA500',
 	white: '#FFFFFF',
 	org_color: '#000000'
 };
@@ -48,7 +48,7 @@ var VERDICTS = {
 		text: 'This message was sent from a Google domain but was not authenticated. Be very cautious. Report to your organization as needed.',
 	},
 	trustedDomainAuth: { //This is a message sent from a trusted domain and apart of our trusted TLD list, but not from the organization
-		header: '<font color="' + COLOR.yellow + '"><b>Sender Address Verified</b></font>',
+		header: '<font color="' + COLOR.green + '"><b>Sender Address Verified</b></font>',
 		text: 'This message has been authenticated but was not sent from an employee from your organization. Proceed with caution and report to your organization as needed.',
 	},
 	auth: { //This is a message sent from a trusted domain, but not from the organization
