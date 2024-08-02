@@ -75,5 +75,5 @@ var VERDICTS = {
 
 //Logging (Splunk)
 var HEC_LOG = false;
-var HEC_ENDPOINT = "https://example.com/path/";
+var HEC_ENDPOINT = "https://example.com/path/"; // Must be added to appscript.json urlFetchWhitelist array.
 var HEC_TOKEN = "";
