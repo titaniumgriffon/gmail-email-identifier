@@ -19,7 +19,7 @@ function buildAddOn(e) {
 	verdictSection = sectionVerdict(message)
 	checkSection = sectionCheck(message);
 	linksFoundSection = sectionLinksFound(message);
-	forwardEmailCybersecuritySection = sectionForwardEmailCybersecurity(message);
+	forwardEmailCybersecuritySection = sectionForwardEmailCybersecurity();
 
 	// Build the main card with the email information section.
 	var card = CardService.newCardBuilder()
@@ -125,6 +125,8 @@ function forwardEmailCybersecurity(e) {
 			HEC_LOG_REPORTED_EMAIL_ENDPOINT,
 			HEC_LOG_REPORTED_EMAIL_TOKEN,
 			{
+				"user_email": Session.getActiveUser().getEmail(),
+				"message_id": e.gmail.messageId,
 				"subject": message.getSubject(),
 				"to": message.getTo(),
 				"cc_list": message.getCc(),
