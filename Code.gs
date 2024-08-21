@@ -97,33 +97,23 @@ function forwardEmailCybersecurity(e) {
 		});
 	}
 
-	if (HEC_LOG === true) {
+	if (HEC_LOG_REPORTED_EMAIL === true) {
 		var attachmentCount = attachmentsArray.length;
 		if (internalPhishingFlag === true)
 			--attachmentCount;
-		
-		var response = UrlFetchApp.fetch(HEC_ENDPOINT, {
-			"method": "post",
-			"contentType": "application/json",
-			"headers": {
-				"Authorization": "Splunk " + HEC_TOKEN,
-				"content-type": "application/json"
-			},
-			"payload": JSON.stringify(
-				{
-					"event": {
-						"subject": message.getSubject(),
-						"to": message.getTo(),
-						"cc_list": message.getCc(),
-						"from": message.getFrom(),
-						"date": message.getDate(),
-						"attachment_count": attachmentsArray.length,
-						"internal_phishing_flag": internalPhishingFlag,
-						"raw_content": message.getRawContent(),
-					}
-				}
-			)
-		});
+		sendHECRequest(
+			HEC_LOG_REPORTED_EMAIL_ENDPOINT,
+			HEC_LOG_REPORTED_EMAIL_TOKEN,
+			{
+				"subject": message.getSubject(),
+				"to": message.getTo(),
+				"cc_list": message.getCc(),
+				"from": message.getFrom(),
+				"date": message.getDate(),
+				"attachment_count": attachmentsArray.length,
+				"internal_phishing_flag": internalPhishingFlag,
+				"raw_content": message.getRawContent(),
+			});
 	}
 
 	//Moving message to trash.
@@ -419,4 +409,22 @@ function removeDuplicates(array) {
 		}
 	}
 	return uniqueArray;
+}
+
+function sendHECRequest(endpoint, token, payload) {
+	return UrlFetchApp.fetch(
+		endpoint,
+		{
+			"method": "post",
+			"contentType": "application/json",
+			"headers": {
+				"Authorization": "Splunk " + token,
+				"content-type": "application/json"
+			},
+			"payload": JSON.stringify(
+				{
+					"event": payload
+				}
+			)
+		});
 }

@@ -74,6 +74,6 @@ var VERDICTS = {
 };
 
 //Logging (Splunk)
-var HEC_LOG = false;
-var HEC_ENDPOINT = "https://example.com/path/"; // Must be added to appscript.json urlFetchWhitelist array.
-var HEC_TOKEN = "";
+var HEC_LOG_REPORTED_EMAIL = false;
+var HEC_LOG_REPORTED_EMAIL_ENDPOINT = "https://example.com/path/"; // Must be added to appscript.json urlFetchWhitelist array.
+var HEC_LOG_REPORTED_EMAIL_TOKEN = "";
