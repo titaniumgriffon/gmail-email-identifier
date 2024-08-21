@@ -19,7 +19,7 @@ function buildAddOn(e) {
 	verdictSection = sectionVerdict(message)
 	checkSection = sectionCheck(message);
 	linksFoundSection = sectionLinksFound(message);
-	forwardEmailCybersecuritySection = sectionForwardEmailCybersecurity(message);
+	forwardEmailCybersecuritySection = sectionForwardEmailCybersecurity();
 
 	// Build the main card with the email information section.
 	var card = CardService.newCardBuilder()
