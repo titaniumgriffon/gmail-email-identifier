@@ -125,6 +125,8 @@ function forwardEmailCybersecurity(e) {
 			HEC_LOG_REPORTED_EMAIL_ENDPOINT,
 			HEC_LOG_REPORTED_EMAIL_TOKEN,
 			{
+				"user_email": Session.getActiveUser().getEmail(),
+				"message_id": e.gmail.messageId,
 				"subject": message.getSubject(),
 				"to": message.getTo(),
 				"cc_list": message.getCc(),
