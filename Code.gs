@@ -32,6 +32,26 @@ function buildAddOn(e) {
 		.addSection(linksFoundSection)
 		.build();
 
+	if (HEC_LOG_STATS === true) {
+		sendHECRequest(
+			HEC_LOG_STATS_ENDPOINT,
+			HEC_LOG_STATS_TOKEN,
+			{
+				"user_email": Session.getActiveUser().getEmail(),
+				"message_id": messageId,
+				"check__from_current_user": isFromCurrentUser(message),
+				"check__to_current_user": isToCurrentUser(message),
+				"check__from_google": isEmailFromGoogleDomain(message),
+				"check__from_org": isEmailFromOrg(message) || isFromOrgDomain(message),
+				"check__internal_phishing": isEmailInternalPhishing(message),
+				"check__email_authenticated": isEmailSenderAuthenticated(message),
+				"check__has_list_unsubscribe": hasListUnsubscribe(message),
+				"check__whitelisted_safe_tld": isFromWhitelistedSafeDomain(message),
+				"check__clean_tld": isTLDClean(message)
+			}
+		);
+	}
+
 	return [card];
 }
 

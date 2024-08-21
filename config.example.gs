@@ -74,6 +74,11 @@ var VERDICTS = {
 };
 
 //Logging (Splunk)
+//// Sends basic data about reported emails.
 var HEC_LOG_REPORTED_EMAIL = false;
 var HEC_LOG_REPORTED_EMAIL_ENDPOINT = "https://example.com/path/"; // Must be added to appscript.json urlFetchWhitelist array.
 var HEC_LOG_REPORTED_EMAIL_TOKEN = "";
+//// Sends general usage statistics.
+var HEC_LOG_STATS = false;
+var HEC_LOG_STATS_ENDPOINT = "https://example.com/path/"; // Must be added to appscript.json urlFetchWhitelist array.
+var HEC_LOG_STATS_TOKEN = "";
