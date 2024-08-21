@@ -99,7 +99,17 @@ Now that we have the script in place, we have to set up the connection so it wil
 
 You will need to wait several minutes for the app to appear in your Gmail Add-ons. 
 
+## HEC Connector Setup
 
+If you are interested in setting up alerts for phishing emails that have been submitted or usage statistics, you can set up a HEC Connector. 
+
+1. Set up your HEC Receiver on your SIEM.
+2. You will need to take note of the HEC URL and Secret Key
+3. Open the config.gs, and scroll to the bottom of the config to enter the following
+   1. HEC_LOG_REPORTED_EMAIL = True;
+   2. HEC_LOG_REPORTED_EMAIL_ENDPOINT = "https://example.com/path/";
+   3. HEC_LOG_REPORTED_EMAIL_TOKEN = "Your_Secret_Key";
+4. Open your AppScript.json and add the url to the URL Fetch Whitelist.
 
 
 
@@ -109,10 +119,10 @@ You will need to wait several minutes for the app to appear in your Gmail Add-on
 
 ### To Do
 
-* Add Splunk Setup instructions
-  * Setup HEC Connector
-  * Get the URL and Key
-  * Copy them into your Config File
-  * Splunk Alerts?
-* Attachments sent to Logging Server
-* Restructure App to include the results in the log.
+- [X] Add Splunk Setup instructions -
+  - [X] Setup HEC Connector
+  - [X] Get the URL and Key
+  - [X] Copy them into your Config File
+  - [ ] Splunk Alerts?
+- [X] Attachments sent to Logging Server
+- [X] Restructure App to include the results in the log.
