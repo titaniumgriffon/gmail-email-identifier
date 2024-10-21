@@ -9,7 +9,7 @@
 		"https://www.googleapis.com/auth/script.external_request"
 	],
 	"urlFetchWhitelist": [
-		"{HEC_ENDPOINT}"
+		"https://example.com/path/for/hec"
 	],
 	"gmail": {
 		"name": "Email Information",
