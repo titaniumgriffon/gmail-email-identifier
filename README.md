@@ -32,7 +32,6 @@ Now that we have the script in place, we have to set up the connection so it wil
 1. Login to Your [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a New Project ![alt text](assets/google_cloud_console_new_project.png)
 3. Copy the Project Number, we will need this for the App Script Deployment.![alt text](assets/console_project_number.png)
-**Go back up to Step 8 in App Script Setup, then come back and finish Console Setup**
 
 4. Click on "APIs & Services"![alt text](assets/api_services.png)
 5. Click on + ENABLE APIS AND SERVICES
@@ -53,6 +52,9 @@ Now that we have the script in place, we have to set up the connection so it wil
 13. Review your summary, and if it looks correct, then select "Back to Dashboard"
 ![alt text](assets/oauth_summary_screen.png)
 14.  Go back to APIs and Services
+
+**Go back up to Step 8 in App Script Setup, then come back and finish Console Setup**
+
 15.  Click the "Google Workspace Marketplace SDK"
 16.  Select "App Configuration" 
        1.  For App Visibality, select Private
@@ -83,6 +85,8 @@ Now that we have the script in place, we have to set up the connection so it wil
     5.  Fill in the ToS, Privacy Policy, and Support URL.
     6.  Select the Region
     7.  Click Publish![alt text](assets/console_store_listing.png)
+
+
 
 ### Google Admin Center ***
 

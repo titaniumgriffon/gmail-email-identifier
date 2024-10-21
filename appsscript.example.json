@@ -13,7 +13,7 @@
 	],
 	"gmail": {
 		"name": "Email Information",
-		"logoUrl": "",
+		"logoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Apps_Script.png",
 		"contextualTriggers": [
 			{
 				"unconditional": {},
