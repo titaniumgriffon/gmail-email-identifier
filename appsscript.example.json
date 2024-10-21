@@ -13,7 +13,7 @@
 	],
 	"gmail": {
 		"name": "Email Information",
-		"logoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Apps_Script.png",
+		"logoUrl": "https://github.com/titaniumgriffon/gmail-email-identifier/blob/5dcfdc2bf9c8b95eba493a9ead2f0f473f01f051/assets/Griffon.png?raw=true",
 		"contextualTriggers": [
 			{
 				"unconditional": {},
